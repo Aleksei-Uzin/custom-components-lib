@@ -1,12 +1,25 @@
 {
   "compilerOptions": {
-    "outDir": "./dist/",
+    "outDir": "./build",
     "sourceMap": true,
     "noImplicitAny": true,
-    "module": "es6",
-    "target": "es5",
+    "noImplicitThis": true,
+    "strictNullChecks": true,
+    "strictFunctionTypes": true,
+    "lib": ["es2016", "dom"],
+    "module": "commonjs",
+    "target": "es6",
     "jsx": "react-jsx",
+    "esModuleInterop": true,
+    "baseUrl": "./src",
     "allowJs": true,
-    "moduleResolution": "node"
-  }
+    "moduleResolution": "node",
+    "paths": {
+      "@/*": ["*"]
+    },
+    "declaration": true,
+    "typeRoots": ["node_modules/@types", "@types"]
+  },
+  "include": ["src"],
+  "exclude": ["node_modules", "build"]
 }

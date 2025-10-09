@@ -1,6 +1,5 @@
-import classNames from 'classNames'
-
 import { ButtonProps } from './types'
+import cx from 'classNames'
 
 export function Button({
   children,
@@ -16,7 +15,7 @@ export function Button({
   variant = 'text',
   ...props
 }: ButtonProps) {
-  const finalClassNames = classNames(
+  const finalClassNames = cx(
     'ui-button',
     {
       // [styles.button]: true,

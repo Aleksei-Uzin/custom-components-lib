@@ -1,6 +1,9 @@
-import { SharedBasic } from '../utils'
-
-export interface ButtonProps extends SharedBasic {
+export interface ButtonProps
+  extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+  /** The text or content to display inside the button */
+  children: React.ReactNode
+  /** Optional CSS class names for styling */
+  className?: string
   /** Button primary color */
   color?: 'primary' | 'info' | 'success' | 'warning' | 'error'
   /** Whether the button is disabled */

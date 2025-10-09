@@ -1,6 +1,6 @@
 {
   "name": "@aleksei-uzin/custom-components-lib",
-  "version": "1.0.9",
+  "version": "1.1.0",
   "description": "A lightweight and customizable React component library built with TypeScript and Storybook",
   "main": "build/index.js",
   "types": "build/index.d.ts",
@@ -30,6 +30,7 @@
   },
   "dependencies": {
     "@types/react": "19.2.2",
+    "classnames": "2.5.1",
     "react": "19.2.0",
     "react-dom": "19.2.0"
   }

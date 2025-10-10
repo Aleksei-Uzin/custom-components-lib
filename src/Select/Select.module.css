@@ -7,6 +7,7 @@
 
   /* Select */
   --selectPadding: 0.5rem;
+  --selectWidth: 20rem;
   --selectFontSize: 1rem;
   --selectBorderWidth: 0.125rem;
   --selectFocusBorderColor: var(--colorInfo);
@@ -23,6 +24,7 @@
 .selectBox {
   display: flex;
   flex-direction: column;
+  width: var(--selectWidth);
 }
 
 .label {

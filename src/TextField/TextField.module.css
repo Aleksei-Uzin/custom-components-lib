@@ -1,0 +1,77 @@
+:root {
+  /* Label */
+  --textFieldLabelMarginBottom: 0.125rem;
+  --textFieldLabelFontSize: 0.875rem;
+  --textFieldLabelFontWeight: 700;
+  --textFieldLabelOpacity: 0.7;
+
+  /* Text Field */
+  --textFieldPadding: 1rem 0.875rem;
+  --textFieldFontSize: 1rem;
+  --textFieldBorderWidth: 0.125rem;
+  --textFieldBorderRadius: 0.4rem;
+  --textFieldFocusColor: var(--colorInfo);
+  --textFieldErrorColor: var(--colorAlert);
+
+  /* Common */
+  --textFieldLineHeight: 1;
+}
+
+.textFieldBox {
+  display: flex;
+  flex-direction: column;
+}
+
+.label {
+  margin-bottom: var(--textFieldLabelMarginBottom);
+  font-size: var(--textFieldLabelFontSize);
+  font-weight: var(--textFieldLabelFontWeight);
+  line-height: var(--textFieldLineHeight);
+  color: var(--colorTextPrimary);
+  opacity: var(--textFieldLabelOpacity);
+}
+
+.label.required::before {
+  display: inline;
+  content: '*';
+  margin-left: 0.0625rem;
+  margin-right: 0.1875rem;
+}
+
+.textField {
+  appearance: none;
+  background: transparent;
+  padding: var(--textFieldPadding);
+  font-size: var(--textFieldFontSize);
+  line-height: var(--textFieldLineHeight);
+  border-width: var(--textFieldBorderWidth);
+  border-radius: var(--textFieldBorderRadius);
+  border-color: var(--colorTextPrimary);
+  border-style: solid;
+  color: var(--colorTextTertiary);
+  outline: none !important;
+  box-shadow: none;
+
+  transition: 100ms ease border-color;
+}
+
+.textFieldFocused {
+  border-color: var(--textFieldFocusColor);
+}
+
+.textFieldError {
+  border-color: var(--textFieldErrorColor);
+}
+
+.labelFocused {
+  color: var(--textFieldFocusColor);
+}
+
+.labelError {
+  color: var(--textFieldErrorColor);
+}
+
+.disabled {
+  cursor: not-allowed;
+  opacity: 0.4;
+}

@@ -5,6 +5,19 @@ module.exports = {
   mode: 'production',
   devtool: 'source-map',
   entry: './src/index.ts',
+  output: {
+    filename: 'index.js',
+    path: path.resolve(__dirname, 'build'),
+    globalObject: 'this',
+    library: {
+      name: 'CustomComponentsLib',
+      type: 'umd',
+    },
+    clean: true,
+  },
+  resolve: {
+    extensions: ['.tsx', '.ts', '.js'],
+  },
   externals: {
     react: {
       commonjs: 'react',
@@ -49,18 +62,5 @@ module.exports = {
     moduleIds: 'deterministic',
     minimizer: [`...`, new CssMinimizerPlugin()],
   },
-  output: {
-    clean: true,
-    path: path.resolve(__dirname, 'build'),
-    filename: 'index.js',
-    globalObject: 'this',
-    library: {
-      name: 'CustomComponentsLib',
-      type: 'umd',
-    },
-  },
   plugins: [],
-  resolve: {
-    extensions: ['.tsx', '.ts', '.js'],
-  },
 }

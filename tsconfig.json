@@ -21,5 +21,5 @@
     "typeRoots": ["node_modules/@types", "@types"]
   },
   "include": ["src"],
-  "exclude": ["node_modules", "build"]
+  "exclude": ["node_modules", "build", "**/*.stories.tsx"]
 }

@@ -1,5 +1,5 @@
 import { ButtonProps } from './types'
-import cx from 'classNames'
+import cx from 'classnames'
 import '../Color'
 import styles from './Button.module.css'
 
@@ -22,7 +22,7 @@ export function Button({
     {
       [styles.button]: true,
       [styles[color]]: true,
-      [styles.disabled]: disabled,
+      [styles.disabled]: disabled || loading,
       [styles.fullWidth]: fullWidth,
       [styles[size]]: true,
       [styles[variant]]: true,

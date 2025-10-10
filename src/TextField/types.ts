@@ -1,7 +1,6 @@
 import * as React from 'react'
 
-export interface TextFieldProps
-  extends React.InputHTMLAttributes<HTMLInputElement> {
+export interface TextFieldProps extends React.InputHTMLAttributes<HTMLInputElement> {
   /** HTML attribute for binding input with label */
   id: string
   /** Optional CSS class names for styling */

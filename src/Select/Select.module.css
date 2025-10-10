@@ -1,0 +1,71 @@
+:root {
+  /* Label */
+  --selectLabelMarginBottom: 0.125rem;
+  --selectLabelFontSize: 0.875rem;
+  --selectLabelFontWeight: 700;
+  --selectLabelOpacity: 0.7;
+
+  /* Select */
+  --selectPadding: 0.5rem;
+  --selectFontSize: 1rem;
+  --selectBorderWidth: 0.125rem;
+  --selectFocusBorderColor: var(--colorInfo);
+  --selectErrorBorderColor: var(--colorAlert);
+
+  /* Option */
+  --optionPadding: 1rem 0.75rem;
+
+  /* Common */
+  --selectBorderRadius: 0.4rem;
+  --selectLineHeight: 1;
+}
+
+.selectBox {
+  display: flex;
+  flex-direction: column;
+}
+
+.label {
+  margin-bottom: var(--selectLabelMarginBottom);
+  font-size: var(--selectLabelFontSize);
+  font-weight: var(--selectLabelFontWeight);
+  line-height: var(--selectLineHeight);
+  color: var(--colorTextPrimary);
+  opacity: var(--selectLabelOpacity);
+}
+
+.label.required::before {
+  display: inline;
+  content: '*';
+  margin-left: 0.0625rem;
+  margin-right: 0.1875rem;
+}
+
+.select {
+  padding: var(--selectPadding);
+  background: transparent;
+  border-width: var(--selectBorderWidth);
+  border-radius: var(--selectBorderRadius);
+  border-color: var(--colorTextPrimary);
+  border-style: solid;
+}
+
+.option {
+  padding: var(--optionPadding);
+  line-height: var(--selectLineHeight);
+  border-radius: var(--selectBorderRadius);
+  color: var(--colorTextPrimary);
+  cursor: pointer;
+}
+
+.option:hover {
+  background-color: var(--colorGrayPrimary);
+}
+
+.option:disabled {
+  opacity: 0.4;
+}
+
+.option:disabled {
+  cursor: not-allowed;
+}

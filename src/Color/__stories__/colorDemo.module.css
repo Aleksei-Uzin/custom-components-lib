@@ -1,0 +1,22 @@
+.colorsGroup {
+  display: flex;
+  gap: 20px;
+}
+
+.colorBox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 6px;
+  width: 150px;
+  height: 90px;
+  cursor: copy;
+  border-radius: 6px;
+  color: #fff;
+}
+
+.neutralColorsGroup > div {
+  border: 0.125rem solid var(--colorTextPrimary);
+  color: var(--colorTextPrimary);
+}

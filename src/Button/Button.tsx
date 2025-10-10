@@ -1,6 +1,8 @@
 import { ButtonProps } from './types'
 import cx from 'classNames'
 
+import styles from './Button.module.css'
+
 export function Button({
   children,
   className,
@@ -18,12 +20,12 @@ export function Button({
   const finalClassNames = cx(
     'ui-button',
     {
-      // [styles.button]: true,
-      // [styles[color]]: true,
-      // [styles.disabled]: disabled,
-      // [styles.fullWidth]: fullWidth,
-      // [styles[size]]: true,
-      // [styles[variant]]: true,
+      [styles.button]: true,
+      [styles[color]]: true,
+      [styles.disabled]: disabled,
+      [styles.fullWidth]: fullWidth,
+      [styles[size]]: true,
+      [styles[variant]]: true,
     },
     className
   )

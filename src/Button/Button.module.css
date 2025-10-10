@@ -1,0 +1,110 @@
+:root {
+  --buttonPaddingVertical: 0.75rem;
+  --buttonPaddingHorizontal: 1.5rem;
+  --buttonBorderColor: transparent;
+  --buttonBorderRadius: 0.4rem;
+  --buttonBorderWidth: 0.125rem;
+  --buttonFontSize: 1rem;
+  --buttonFontWeight: 700;
+}
+
+/* Color */
+.primary {
+  --buttonBaseColor: var(--colorTextPrimary);
+  --buttonBaseHoverColor: var(--colorTextTertiary);
+}
+
+.info {
+  --buttonBaseColor: var(--colorInfo);
+  --buttonBaseHoverColor: var(--colorInfoHover);
+}
+
+.success {
+  --buttonBaseColor: var(--colorSuccess);
+  --buttonBaseHoverColor: var(--colorSuccessHover);
+}
+
+.warning {
+  --buttonBaseColor: var(--colorWarning);
+  --buttonBaseHoverColor: var(--colorWarningHover);
+}
+
+.error {
+  --buttonBaseColor: var(--colorAlert);
+  --buttonBaseHoverColor: var(--colorAlertHover);
+}
+
+/* Size */
+.small {
+  --buttonPaddingVertical: 0.4375rem;
+  --buttonPaddingHorizontal: 0.5rem;
+  --buttonFontSize: 0.875rem;
+}
+
+.medium {
+  --buttonPaddingVertical: 0.5625rem;
+  --buttonPaddingHorizontal: 0.875rem;
+}
+
+.large {
+  --buttonPaddingVertical: 0.75rem;
+  --buttonPaddingHorizontal: 1.5rem;
+}
+
+/* Variant */
+.contained {
+  --buttonBackgroundColor: var(--buttonBaseColor);
+  --buttonBackgroundHoverColor: var(--buttonBaseHoverColor);
+  --buttonTextColor: var(--colorWhitePrimary);
+  --buttonTextColorHover: var(--colorWhitePrimary);
+}
+
+.outlined {
+  --buttonBorderColor: var(--buttonBaseColor);
+  --buttonBorderHoverColor: var(--buttonBaseHoverColor);
+  --buttonTextColor: var(--buttonBaseColor);
+  --buttonTextColorHover: var(--buttonBaseHoverColor);
+}
+
+.text {
+  --buttonBackgroundColor: transparent;
+  --buttonBackgroundHoverColor: var(--colorGrayPrimary);
+  --buttonTextColor: var(--buttonBaseColor);
+  --buttonTextColorHover: var(--buttonBaseHoverColor);
+}
+
+.button {
+  display: inline-block;
+  padding: var(--buttonPaddingVertical) var(--buttonPaddingHorizontal);
+  appearance: none;
+  border: none;
+  background-color: var(--buttonBackgroundColor);
+  border-radius: var(--buttonBorderRadius);
+  font-weight: var(--buttonFontWeight);
+  font-size: var(--buttonFontSize);
+  line-height: 1;
+  outline: none !important;
+  box-shadow: 0 0 0 var(--buttonBorderWidth) var(--buttonBorderColor) inset;
+  color: var(--buttonTextColor);
+  cursor: pointer;
+
+  transition:
+    color 100ms linear,
+    background-color 100ms linear,
+    box-shadow 100ms linear;
+}
+
+.button:hover:not(.disabled) {
+  --buttonBackgroundColor: var(--buttonBackgroundHoverColor);
+  --buttonBorderColor: var(--buttonBorderHoverColor);
+  --buttonTextColor: var(--buttonTextColorHover);
+}
+
+.fullWidth {
+  width: 100%;
+}
+
+.disabled {
+  cursor: not-allowed;
+  opacity: 0.4;
+}

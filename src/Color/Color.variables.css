@@ -1,0 +1,26 @@
+/* 
+ * Taken from:
+ * https://storybook.heroui.com/?path=/story/foundations-colors--semantic-colors
+ */
+
+:root {
+  /* Neutrals */
+  --colorWhitePrimary: #fff;
+  --colorWhiteSecondary: #f4f4f4;
+  --colorGrayPrimary: #ddd;
+
+  /* Text Colors */
+  --colorTextPrimary: #18181b;
+  --colorTextSecondary: #3f3f46;
+  --colorTextTertiary: #52525b;
+
+  /* Action Colors */
+  --colorInfo: #006fee;
+  --colorInfoHover: #0057bb; /* L - 10% */
+  --colorSuccess: #17c964;
+  --colorSuccessHover: #129b4d; /* L - 10% */
+  --colorWarning: #f5a524;
+  --colorWarningHover: #dc8c0a; /* L - 10% */
+  --colorAlert: #f31260;
+  --colorAlertHover: #c80a4c; /* L - 10% */
+}

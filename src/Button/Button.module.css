@@ -88,9 +88,7 @@
   color: var(--buttonTextColor);
   cursor: pointer;
 
-  transition:
-    color 100ms linear,
-    background-color 100ms linear,
+  transition: color 100ms linear, background-color 100ms linear,
     box-shadow 100ms linear;
 }
 

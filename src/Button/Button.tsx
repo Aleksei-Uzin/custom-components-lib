@@ -1,6 +1,6 @@
 import { ButtonProps } from './types'
 import cx from 'classNames'
-
+import '../Color'
 import styles from './Button.module.css'
 
 export function Button({

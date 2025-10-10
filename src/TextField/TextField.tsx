@@ -1,4 +1,4 @@
-import { useRef, useState, FocusEvent } from 'react'
+import { useState, FocusEvent } from 'react'
 import cx from 'classnames'
 import { TextFieldProps } from './types'
 

@@ -22,7 +22,6 @@ export function TextField({
   ...rest
 }: TextFieldProps) {
   const [isFocused, setFocused] = useState(false)
-  const hasFocus = isFocused
 
   const handleFocus = (e: FocusEvent<HTMLInputElement>) => {
     setFocused(true)
@@ -43,7 +42,7 @@ export function TextField({
     styles.textField,
     {
       [styles.disabled]: disabled,
-      [styles.textFieldFocused]: !error && hasFocus,
+      [styles.textFieldFocused]: !error && isFocused,
       [styles.textFieldError]: error,
     },
     className
@@ -52,7 +51,7 @@ export function TextField({
   const labelClassNames = cx('ui-text-field-label', styles.label, {
     [styles.required]: !disabled && isRequired,
     [styles.disabled]: disabled,
-    [styles.labelFocused]: !error && hasFocus,
+    [styles.labelFocused]: !error && isFocused,
     [styles.labelError]: error,
   })
 

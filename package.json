@@ -1,9 +1,16 @@
 {
   "name": "@aleksei-uzin/custom-components-lib",
-  "version": "1.2.0",
+  "version": "1.2.27",
   "description": "A lightweight and customizable React component library built with TypeScript and Storybook",
   "main": "build/index.js",
   "types": "build/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./build/index.js",
+      "require": "./build/index.js",
+      "types": "./build/index.d.ts"
+    }
+  },
   "files": [
     "build"
   ],
@@ -24,6 +31,7 @@
   "homepage": "https://github.com/Aleksei-Uzin/custom-components-lib#readme",
   "devDependencies": {
     "css-loader": "7.1.2",
+    "css-minimizer-webpack-plugin": "7.0.2",
     "style-loader": "4.0.0",
     "ts-loader": "9.5.4",
     "typescript": "5.9.3",

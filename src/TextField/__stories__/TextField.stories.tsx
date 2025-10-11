@@ -1,5 +1,4 @@
 import type { Meta, StoryObj } from '@storybook/react-webpack5'
-import { fn } from 'storybook/test'
 import { TextField } from '../TextField'
 
 const meta = {
@@ -21,9 +20,7 @@ export const Preview: Story = {
     error: false,
     isRequired: false,
     label: 'Label',
-    maxLength: 20,
     placeholder: 'Type your text here',
     value: '',
-    onChange: fn(),
   },
 }

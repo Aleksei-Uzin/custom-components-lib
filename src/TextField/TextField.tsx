@@ -1,24 +1,19 @@
 import { useState, FocusEvent } from 'react'
 import cx from 'classnames'
+import { BaseInput } from '../BaseInput'
 import { TextFieldProps } from './types'
-
 import '../Color'
 import styles from './TextField.module.css'
 
 export function TextField({
-  id,
-  className,
-  disabled,
   error,
+  id,
+  labelClassName,
+  inputClassName,
+  disabled,
   isRequired,
-  label,
-  labelProps,
-  maxLength,
-  placeholder = '',
-  value = '',
-  onChange,
-  onFocus,
   onBlur,
+  onFocus,
   ...rest
 }: TextFieldProps) {
   const [isFocused, setFocused] = useState(false)
@@ -37,7 +32,7 @@ export function TextField({
     }
   }
 
-  const textFieldClassNames = cx(
+  const inputClassNames = cx(
     'ui-text-field',
     styles.textField,
     {
@@ -45,35 +40,25 @@ export function TextField({
       [styles.textFieldFocused]: !error && isFocused,
       [styles.textFieldError]: error,
     },
-    className
+    inputClassName
   )
 
-  const labelClassNames = cx('ui-text-field-label', styles.label, {
-    [styles.required]: !disabled && isRequired,
+  const labelClassNames = cx('ui-text-field-label', {
     [styles.disabled]: disabled,
     [styles.labelFocused]: !error && isFocused,
     [styles.labelError]: error,
+    labelClassName,
   })
 
   return (
-    <div className={styles.textFieldBox}>
-      {label && (
-        <label {...labelProps} htmlFor={id} className={labelClassNames}>
-          {label}
-        </label>
-      )}
-      <input
-        id={id}
-        className={textFieldClassNames}
-        disabled={disabled}
-        maxLength={maxLength}
-        placeholder={placeholder}
-        onChange={onChange}
-        onFocus={handleFocus}
-        onBlur={handleBlur}
-        value={value}
-        {...rest}
-      />
-    </div>
+    <BaseInput
+      id={id}
+      isRequired={!disabled && isRequired}
+      inputClassName={inputClassNames}
+      labelClassName={labelClassNames}
+      onBlur={handleBlur}
+      onFocus={handleFocus}
+      {...rest}
+    />
   )
 }

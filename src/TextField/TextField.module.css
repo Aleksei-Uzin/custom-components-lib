@@ -1,11 +1,4 @@
 :root {
-  /* Label */
-  --textFieldLabelMarginBottom: 0.125rem;
-  --textFieldLabelFontSize: 0.875rem;
-  --textFieldLabelFontWeight: 700;
-  --textFieldLabelOpacity: 0.7;
-
-  /* Text Field */
   --textFieldPadding: 1rem 0.875rem;
   --textFieldWidth: 20rem;
   --textFieldFontSize: 1rem;
@@ -13,31 +6,7 @@
   --textFieldBorderRadius: 0.4rem;
   --textFieldFocusColor: var(--colorInfo);
   --textFieldErrorColor: var(--colorAlert);
-
-  /* Common */
   --textFieldLineHeight: 1;
-}
-
-.textFieldBox {
-  display: flex;
-  flex-direction: column;
-  width: var(--textFieldWidth);
-}
-
-.label {
-  margin-bottom: var(--textFieldLabelMarginBottom);
-  font-size: var(--textFieldLabelFontSize);
-  font-weight: var(--textFieldLabelFontWeight);
-  line-height: var(--textFieldLineHeight);
-  color: var(--colorTextPrimary);
-  opacity: var(--textFieldLabelOpacity);
-}
-
-.label.required::before {
-  display: inline;
-  content: '*';
-  margin-left: 0.0625rem;
-  margin-right: 0.1875rem;
 }
 
 .textField {

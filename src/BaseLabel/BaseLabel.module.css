@@ -1,0 +1,24 @@
+:root {
+  --labelMarginBottom: 0.125rem;
+  --labelFontSize: 0.875rem;
+  --labelFontWeight: 700;
+  --labelLineHeight: 1;
+  --labelOpacity: 0.7;
+}
+
+.label {
+  margin-bottom: var(--labelMarginBottom);
+  font-size: var(--labelFontSize);
+  font-weight: var(--labelFontWeight);
+  line-height: var(--labelLineHeight);
+  color: var(--colorTextPrimary);
+  opacity: var(--labelOpacity);
+}
+
+.label.required::after {
+  display: inline;
+  content: '*';
+  margin-left: 0.0625rem;
+  margin-right: 0.1875rem;
+  color: var(--colorAlert);
+}

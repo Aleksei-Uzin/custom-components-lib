@@ -8,6 +8,7 @@ import styles from './TextField.module.css'
 export function TextField({
   error,
   id,
+  boxClassName,
   labelClassName,
   inputClassName,
   disabled,
@@ -54,6 +55,7 @@ export function TextField({
     <BaseInput
       id={id}
       isRequired={!disabled && isRequired}
+      boxClassName={cx(styles.inputBox, boxClassName)}
       inputClassName={inputClassNames}
       labelClassName={labelClassNames}
       onBlur={handleBlur}

@@ -9,6 +9,12 @@
   --textFieldLineHeight: 1;
 }
 
+.inputBox {
+  display: flex;
+  flex-direction: column;
+  width: 20rem;
+}
+
 .textField {
   appearance: none;
   background: transparent;

@@ -25,6 +25,8 @@ export interface BaseInputProps {
   onFocus?: (event: React.FocusEvent<HTMLInputElement>) => void
   /** Optional text field placeholder */
   placeholder?: string
+  /** The input available types */
+  type?: 'checkbox' | 'radio' | 'text'
   /** The value of the text field */
   value?: string
 }

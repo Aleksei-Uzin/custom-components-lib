@@ -1,0 +1,71 @@
+:root {
+  --switchWidth: 2.8rem;
+  --switchHeight: 1rem;
+  --switchBorderRadius: 1rem;
+  --switchBorderWidth: 0.125rem;
+  --switchBorderColor: var(--colorTextPrimary);
+  --switchBorderHoverColor: var(--colorTextTertiary);
+}
+
+/* Color */
+.primary {
+  --switchBorderColor: var(--colorTextPrimary);
+  --switchBorderHoverColor: var(--colorTextTertiary);
+}
+
+.info {
+  --switchBorderColor: var(--colorInfo);
+  --switchBorderHoverColor: var(--colorInfoHover);
+}
+
+.success {
+  --switchBorderColor: var(--colorSuccess);
+  --switchBorderHoverColor: var(--colorSuccessHover);
+}
+
+.warning {
+  --switchBorderColor: var(--colorWarning);
+  --switchBorderHoverColor: var(--colorWarningHover);
+}
+
+.error {
+  --switchBorderColor: var(--colorAlert);
+  --switchBorderHoverColor: var(--colorAlertHover);
+}
+
+.switch {
+  width: var(--switchWidth);
+  height: var(--switchHeight);
+  appearance: none;
+  border: none;
+  border-radius: var(--switchBorderRadius);
+  box-shadow: 0 0 0 var(--switchBorderWidth) var(--colorGrayPrimary) inset;
+}
+
+/* Checkmark */
+.switch::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+  background-color: var(--colorTextTertiary);
+  transform: translate(0, -50%);
+
+  transition:
+    background-color 100ms linear,
+    transform 100ms linear;
+}
+
+.switch:checked::after {
+  background-color: var(--switchBorderColor);
+  transform: translate(90%, -50%);
+}
+
+.disabled .label,
+.disabled .switch {
+  cursor: not-allowed;
+  opacity: 0.4;
+}

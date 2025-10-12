@@ -1,14 +1,18 @@
 import { BaseLabel } from '../BaseLabel'
 import { BaseInputProps } from './types'
+import cx from 'classnames'
+import styles from './BaseInput.module.css'
 
 export function BaseInput({
   id,
+  color = 'primary',
   boxClassName,
   labelClassName,
   inputClassName,
   isRequired,
   label,
   labelProps,
+  labelPosition = 'left',
   onBlur,
   onChange,
   onFocus,
@@ -16,16 +20,26 @@ export function BaseInput({
   value,
   ...rest
 }: BaseInputProps) {
+  const finalBoxClassNames = cx(styles.container, { [styles[labelPosition]]: true }, boxClassName)
+  const finalInputClassNames = cx(styles.input, inputClassName)
+  const finalLabelClassNames = cx(styles.label, labelClassName)
+
   return (
-    <div className={boxClassName}>
+    <div className={finalBoxClassNames}>
       {label && (
-        <BaseLabel className={labelClassName} id={id} isRequired={isRequired} {...labelProps}>
+        <BaseLabel
+          className={finalLabelClassNames}
+          color={color}
+          id={id}
+          isRequired={isRequired}
+          {...labelProps}
+        >
           {label}
         </BaseLabel>
       )}
       <input
         id={id}
-        className={inputClassName}
+        className={finalInputClassNames}
         onBlur={onBlur}
         onChange={onChange}
         onFocus={onFocus}

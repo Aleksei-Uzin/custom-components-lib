@@ -1,18 +1,50 @@
 :root {
-  --labelMarginBottom: 0.125rem;
+  --labelColor: var(--colorTextPrimary);
+  --labelHoverColor: var(--colorTextTertiary);
   --labelFontSize: 0.875rem;
   --labelFontWeight: 700;
   --labelLineHeight: 1;
   --labelOpacity: 0.7;
 }
 
+/* Color */
+.primary {
+  --labelColor: var(--colorTextPrimary);
+  --labelHoverColor: var(--colorTextTertiary);
+}
+
+.info {
+  --labelColor: var(--colorInfo);
+  --labelHoverColor: var(--colorInfoHover);
+}
+
+.success {
+  --labelColor: var(--colorSuccess);
+  --labelHoverColor: var(--colorSuccessHover);
+}
+
+.warning {
+  --labelColor: var(--colorWarning);
+  --labelHoverColor: var(--colorWarningHover);
+}
+
+.error {
+  --labelColor: var(--colorAlert);
+  --labelHoverColor: var(--colorAlertHover);
+}
+
 .label {
-  margin-bottom: var(--labelMarginBottom);
   font-size: var(--labelFontSize);
   font-weight: var(--labelFontWeight);
   line-height: var(--labelLineHeight);
-  color: var(--colorTextPrimary);
+  color: var(--labelColor);
   opacity: var(--labelOpacity);
+
+  transition: color 100ms linear;
+}
+
+.label:hover {
+  color: var(--labelHoverColor);
 }
 
 .label.required::after {

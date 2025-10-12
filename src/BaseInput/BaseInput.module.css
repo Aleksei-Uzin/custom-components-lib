@@ -1,0 +1,45 @@
+:root {
+  /* Container */
+  --containerDirection: row;
+
+  /* Label */
+  --labelOrder: 0;
+}
+
+/* Label Position */
+.top {
+  --labelOrder: 0;
+  --containerDirection: column;
+}
+
+.right {
+  --labelOrder: 1;
+  --containerDirection: row;
+}
+
+.bottom {
+  --labelOrder: 1;
+  --containerDirection: column;
+}
+
+.left {
+  --labelOrder: 0;
+  --containerDirection: row;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  flex-direction: var(--containerDirection);
+  gap: 0.5rem;
+}
+
+.label {
+  order: var(--labelOrder);
+  cursor: pointer;
+}
+
+.input {
+  position: relative;
+  cursor: pointer;
+}

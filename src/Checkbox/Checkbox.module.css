@@ -1,0 +1,72 @@
+:root {
+  --checkboxWidth: 1.5rem;
+  --checkboxHeight: 1.5rem;
+  --checkboxBorderRadius: 0.4rem;
+  --checkboxBorderWidth: 0.125rem;
+  --checkboxBorderColor: var(--colorTextPrimary);
+  --checkboxBorderHoverColor: var(--colorTextTertiary);
+}
+
+/* Color */
+.primary {
+  --checkboxBorderColor: var(--colorTextPrimary);
+  --checkboxBorderHoverColor: var(--colorTextTertiary);
+}
+
+.info {
+  --checkboxBorderColor: var(--colorInfo);
+  --checkboxBorderHoverColor: var(--colorInfoHover);
+}
+
+.success {
+  --checkboxBorderColor: var(--colorSuccess);
+  --checkboxBorderHoverColor: var(--colorSuccessHover);
+}
+
+.warning {
+  --checkboxBorderColor: var(--colorWarning);
+  --checkboxBorderHoverColor: var(--colorWarningHover);
+}
+
+.error {
+  --checkboxBorderColor: var(--colorAlert);
+  --checkboxBorderHoverColor: var(--colorAlertHover);
+}
+
+.checkbox {
+  width: var(--checkboxWidth);
+  height: var(--checkboxHeight);
+  appearance: none;
+  border: none;
+  border-radius: var(--checkboxBorderRadius);
+  box-shadow: 0 0 0 var(--checkboxBorderWidth) var(--checkboxBorderColor) inset;
+}
+
+.container:not(.disabled) .checkbox:hover {
+  --checkboxBorderColor: var(--checkboxBorderHoverColor);
+}
+
+.disabled .label,
+.disabled .checkbox {
+  cursor: not-allowed;
+  opacity: 0.4;
+}
+
+/* Checkmark */
+.checkbox::after {
+  content: '';
+  position: absolute;
+  display: none;
+  left: 8px;
+  top: 2px;
+  width: 7px;
+  height: 14px;
+  border: solid var(--checkboxBorderColor);
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+/* Display checkmark when checked */
+.container .checkbox:checked::after {
+  display: block;
+}

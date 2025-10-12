@@ -9,6 +9,8 @@ export interface BaseInputProps {
   labelClassName?: string
   /** Optional CSS class name for input */
   inputClassName?: string
+  /** Input primary color */
+  color?: 'primary' | 'info' | 'success' | 'warning' | 'error'
   /** Whether the input is disabled */
   disabled?: boolean
   /** Adds red asterisk after label */
@@ -17,6 +19,8 @@ export interface BaseInputProps {
   label?: React.ReactNode
   /** HTML attributes for label */
   labelProps?: BaseLabelProps
+  /** The placement of the label */
+  labelPosition?: 'top' | 'right' | 'bottom' | 'left'
   /** Optional blur event handler */
   onBlur?: (event: React.FocusEvent<HTMLInputElement>) => void
   /** Optional change event handler */

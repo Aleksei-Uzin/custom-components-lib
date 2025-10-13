@@ -1,0 +1,40 @@
+:root {
+  --modalOuterBackground: var(--colorGrayPrimary);
+  --modalInnerBackground: var(--colorWhitePrimary);
+  --modalBorderColor: var(--colorInfo);
+  --modalBorderRadius: 0.4rem;
+  --modalColor: var(--colorTextPrimary);
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--modalOuterBackground);
+  z-index: 999;
+}
+
+.modalContent {
+  position: fixed;
+  padding: 1rem;
+  width: 50%;
+  max-width: 22rem;
+  height: auto;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: var(--modalColor);
+  border-radius: var(--modalBorderRadius);
+  border: 0.125rem solid var(--modalBorderColor);
+  background: var(--modalInnerBackground);
+}
+
+.displayBlock {
+  display: block;
+}
+
+.displayNone {
+  display: none;
+}

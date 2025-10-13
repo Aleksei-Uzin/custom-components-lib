@@ -1,5 +1,6 @@
 export { Button, type ButtonProps } from './Button'
 export { Checkbox, type CheckboxProps } from './Checkbox'
+export { Modal, type ModalProps } from './Modal'
 export { Select, type SelectProps } from './Select'
 export { Switch, type SwitchProps } from './Switch'
 export { TextField, type TextFieldProps } from './TextField'

@@ -5,4 +5,6 @@ export interface TextFieldProps extends BaseInputProps {
   error?: boolean
   /** Maximum number of characters allowed in the element */
   maxLength?: number
+  /** Optional text field placeholder */
+  placeholder?: string
 }

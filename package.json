@@ -1,6 +1,6 @@
 {
   "name": "@aleksei-uzin/custom-components-lib",
-  "version": "1.11.7",
+  "version": "1.11.8",
   "description": "A lightweight and customizable React component library built with TypeScript and Storybook",
   "main": "build/index.js",
   "types": "build/index.d.ts",
@@ -12,7 +12,9 @@
     }
   },
   "files": [
-    "build"
+    "build",
+    "README.md",
+    "LICENSE"
   ],
   "scripts": {
     "build": "webpack",

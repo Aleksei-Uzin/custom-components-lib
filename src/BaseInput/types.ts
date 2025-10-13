@@ -11,6 +11,8 @@ export interface BaseInputProps {
   inputClassName?: string
   /** Input primary color */
   color?: 'primary' | 'info' | 'success' | 'warning' | 'error'
+  /** Used for control checked state */
+  checked?: boolean
   /** Whether the input is disabled */
   disabled?: boolean
   /** Adds red asterisk after label */

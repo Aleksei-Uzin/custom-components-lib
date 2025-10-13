@@ -25,6 +25,8 @@ export interface BaseInputProps {
   onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void
   /** Optional focus event handler */
   onFocus?: (event: React.FocusEvent<HTMLInputElement>) => void
+  /** The placement of the label */
+  labelPosition?: 'top' | 'right' | 'bottom' | 'left'
   /** The input available types */
   type?: 'checkbox' | 'radio' | 'text'
   /** The value of the text field */

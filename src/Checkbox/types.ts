@@ -5,6 +5,4 @@ export interface CheckboxProps extends Omit<BaseInputProps, 'type' | 'placeholde
   checked?: boolean
   /** Checkbox primary color */
   color?: 'primary' | 'info' | 'success' | 'warning' | 'error'
-  /** The placement of the label */
-  labelPosition?: 'top' | 'right' | 'bottom' | 'left'
 }

@@ -67,10 +67,10 @@
 }
 
 .text {
-  --buttonBackgroundColor: transparent;
+  --buttonBackgroundColor: var(--colorWhiteSecondary);
   --buttonBackgroundHoverColor: var(--colorGrayPrimary);
   --buttonTextColor: var(--buttonBaseColor);
-  --buttonTextColorHover: var(--buttonBaseHoverColor);
+  --buttonTextColorHover: var(--buttonBaseColor);
 }
 
 .button {

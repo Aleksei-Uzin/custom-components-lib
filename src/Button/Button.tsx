@@ -12,7 +12,6 @@ export function Button({
   loading,
   onClick,
   size = 'medium',
-  style,
   type = 'button',
   variant = 'text',
   ...props
@@ -35,7 +34,6 @@ export function Button({
       className={finalClassNames}
       disabled={disabled || loading}
       onClick={onClick}
-      style={style}
       type={type}
       {...props}
     >

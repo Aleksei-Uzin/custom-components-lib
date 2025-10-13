@@ -64,6 +64,10 @@ In the project directory, you can run:
 - `npm run format:check`: Checks for formatting issues with Prettier.
 - `npm run format:write`: Formats the source files with Prettier.
 
+## A Note from the Author
+
+This library represents my first journey into creating and publishing a component library. It has been a fantastic learning experience, and I'm excited to share it. I hope you find it useful, and I welcome any feedback or contributions as I continue to learn and improve.
+
 ## 🤝 Contributing
 
 Contributions, issues, and feature requests are welcome! Feel free to check the issues page.

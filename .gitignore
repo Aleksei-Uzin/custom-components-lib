@@ -4,4 +4,5 @@ build
 storybook-static
 coverage
 .eslintcache
+.env
 CHANGELOG.md

@@ -1,6 +1,6 @@
 {
   "name": "@aleksei-uzin/custom-components-lib",
-  "version": "1.9.2",
+  "version": "1.10.0",
   "description": "A lightweight and customizable React component library built with TypeScript and Storybook",
   "main": "build/index.js",
   "types": "build/index.d.ts",
@@ -22,7 +22,8 @@
     "format:check": "prettier --check src/**/*.{ts,tsx,css}",
     "format:write": "prettier --write src/**/*.{ts,tsx,css}",
     "lint": "eslint src/**/*.{ts,tsx}",
-    "prepare": "husky"
+    "prepare": "husky",
+    "chromatic": "dotenv -- npx chromatic"
   },
   "repository": {
     "type": "git",
@@ -31,7 +32,6 @@
   "keywords": [
     "react",
     "react-components",
-    "customizable-components",
     "ui-library",
     "typescript",
     "storybook"
@@ -47,8 +47,10 @@
     "@storybook/addon-docs": "9.1.10",
     "@storybook/addon-webpack5-compiler-swc": "4.0.1",
     "@storybook/react-webpack5": "9.1.10",
+    "chromatic": "13.3.0",
     "css-loader": "7.1.2",
     "css-minimizer-webpack-plugin": "7.0.2",
+    "dotenv-cli": "10.0.0",
     "eslint": "9.37.0",
     "eslint-config-prettier": "10.1.8",
     "eslint-plugin-react": "7.37.5",

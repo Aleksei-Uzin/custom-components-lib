@@ -4,7 +4,7 @@ import cx from 'classnames'
 import '../Color'
 import styles from './Switch.module.css'
 
-export function Switch({
+export const Switch: React.FC<SwitchProps> = ({
   color = 'primary',
   boxClassName,
   inputClassName,
@@ -16,7 +16,7 @@ export function Switch({
   id,
   isRequired,
   ...rest
-}: SwitchProps) {
+}) => {
   const colorClass = { [styles[color]]: true }
   const labelPositionClass = { [styles[labelPosition]]: true }
   const finalBoxClassNames = cx(styles.box, labelPositionClass, boxClassName)

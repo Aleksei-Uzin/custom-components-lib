@@ -5,7 +5,7 @@ import { SelectProps } from './types'
 import '../Color'
 import styles from './Select.module.css'
 
-export function Select({
+export const Select: React.FC<SelectProps> = ({
   boxClassName,
   labelClassName,
   selectClassName,
@@ -17,7 +17,7 @@ export function Select({
   options,
   placeholder,
   ...rest
-}: SelectProps) {
+}) => {
   const finalBoxClassNames = cx(styles.box, boxClassName)
   const finalSelectClassNames = cx(styles.select, selectClassName)
   const finalLabelClassNames = cx(styles.label, labelClassName)

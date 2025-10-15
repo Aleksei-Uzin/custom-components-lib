@@ -4,7 +4,7 @@ import { TextFieldProps } from './types'
 import '../Color'
 import styles from './TextField.module.css'
 
-export function TextField({
+export const TextField: React.FC<TextFieldProps> = ({
   color = 'primary',
   boxClassName,
   inputClassName,
@@ -15,7 +15,7 @@ export function TextField({
   id,
   isRequired,
   ...rest
-}: TextFieldProps) {
+}) => {
   const colorClass = { [styles[color]]: true }
   const finalBoxClassNames = cx(styles.box, boxClassName)
   const finalTextFieldClassNames = cx(styles.textField, colorClass, inputClassName)

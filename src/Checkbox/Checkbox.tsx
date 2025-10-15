@@ -4,7 +4,7 @@ import cx from 'classnames'
 import '../Color'
 import styles from './Checkbox.module.css'
 
-export function Checkbox({
+export const Checkbox: React.FC<CheckboxProps> = ({
   color = 'primary',
   boxClassName,
   inputClassName,
@@ -16,7 +16,7 @@ export function Checkbox({
   id,
   isRequired,
   ...rest
-}: CheckboxProps) {
+}) => {
   const colorClass = { [styles[color]]: true }
   const labelPositionClass = { [styles[labelPosition]]: true }
   const finalBoxClassNames = cx(styles.box, labelPositionClass, boxClassName)

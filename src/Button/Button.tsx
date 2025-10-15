@@ -3,7 +3,7 @@ import cx from 'classnames'
 import '../Color'
 import styles from './Button.module.css'
 
-export const Button = ({
+export const Button: React.FC<ButtonProps> = ({
   className,
   children,
   color = 'primary',
@@ -11,7 +11,7 @@ export const Button = ({
   size = 'medium',
   variant = 'outlined',
   ...rest
-}: ButtonProps) => {
+}) => {
   const finalClassNames = cx(
     'ui-button',
     {

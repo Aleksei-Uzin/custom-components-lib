@@ -15,11 +15,9 @@ type Story = StoryObj<typeof meta>
 
 export const Preview: Story = {
   args: {
-    id: 'app-id',
+    color: 'primary',
     disabled: false,
-    isRequired: false,
-    label: 'Ready to get started?',
-    labelPosition: 'right',
-    value: 'yes',
+    id: 'checkbox-id',
+    label: 'Label will be displayed here',
   },
 }

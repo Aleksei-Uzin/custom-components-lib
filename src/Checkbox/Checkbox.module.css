@@ -1,4 +1,13 @@
 :root {
+  /* Box */
+  --boxDirection: row;
+  --boxGap: 0.5rem;
+
+  /* Label */
+  --labelColor: var(--colorTextPrimary);
+  --labelOrder: 0;
+
+  /* Checkbox */
   --checkboxWidth: 1.5rem;
   --checkboxHeight: 1.5rem;
   --checkboxBorderRadius: 0.4rem;
@@ -9,47 +18,77 @@
 
 /* Color */
 .primary {
+  --labelColor: var(--colorTextPrimary);
   --checkboxBorderColor: var(--colorTextPrimary);
   --checkboxBorderHoverColor: var(--colorTextTertiary);
 }
 
 .info {
+  --labelColor: var(--colorInfo);
   --checkboxBorderColor: var(--colorInfo);
   --checkboxBorderHoverColor: var(--colorInfoHover);
 }
 
 .success {
+  --labelColor: var(--colorSuccess);
   --checkboxBorderColor: var(--colorSuccess);
   --checkboxBorderHoverColor: var(--colorSuccessHover);
 }
 
 .warning {
+  --labelColor: var(--colorWarning);
   --checkboxBorderColor: var(--colorWarning);
   --checkboxBorderHoverColor: var(--colorWarningHover);
 }
 
 .error {
+  --labelColor: var(--colorAlert);
   --checkboxBorderColor: var(--colorAlert);
   --checkboxBorderHoverColor: var(--colorAlertHover);
 }
 
+/* Label Position */
+.top {
+  --labelOrder: 0;
+  --boxDirection: column;
+}
+
+.right {
+  --labelOrder: 1;
+  --boxDirection: row;
+}
+
+.bottom {
+  --labelOrder: 1;
+  --boxDirection: column;
+}
+
+.left {
+  --labelOrder: 0;
+  --boxDirection: row;
+}
+
+.box {
+  display: flex;
+  align-items: center;
+  flex-direction: var(--boxDirection);
+  gap: var(--boxGap);
+}
+
+.label {
+  order: var(--labelOrder);
+  color: var(--labelColor);
+}
+
 .checkbox {
+  position: relative;
   width: var(--checkboxWidth);
   height: var(--checkboxHeight);
   appearance: none;
   border: none;
   border-radius: var(--checkboxBorderRadius);
   box-shadow: 0 0 0 var(--checkboxBorderWidth) var(--checkboxBorderColor) inset;
-}
-
-.container:not(.disabled) .checkbox:hover {
-  --checkboxBorderColor: var(--checkboxBorderHoverColor);
-}
-
-.disabled .label,
-.disabled .checkbox {
-  cursor: not-allowed;
-  opacity: 0.4;
+  cursor: pointer;
 }
 
 /* Checkmark */
@@ -67,6 +106,11 @@
 }
 
 /* Display checkmark when checked */
-.container .checkbox:checked::after {
+.checkbox:checked::after {
   display: block;
+}
+
+.checkbox:disabled {
+  cursor: not-allowed;
+  opacity: 0.4;
 }

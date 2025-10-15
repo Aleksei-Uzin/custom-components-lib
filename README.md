@@ -12,7 +12,7 @@ A lightweight and customizable React component library built with TypeScript and
 - **Customizable**: Components designed to be easily styled and adapted.
 - **TypeScript**: Fully typed for a better developer experience.
 - **Storybook**: Comes with a Storybook for interactive component development and documentation.
-- **Live Demo**: [View the deployed Storybook on Chromatic](https://68ecd60c78da2f4cd2b1e20e-spwiavwqzt.chromatic.com/).
+- **Live Demo**: [View the deployed Storybook on Chromatic](https://68ecd60c78da2f4cd2b1e20e-whhjqvsoao.chromatic.com/).
 
 ## 🚀 Installation
 

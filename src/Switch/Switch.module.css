@@ -1,4 +1,13 @@
 :root {
+  /* Box */
+  --boxDirection: row;
+  --boxGap: 0.5rem;
+
+  /* Label */
+  --labelColor: var(--colorTextPrimary);
+  --labelOrder: 0;
+
+  /* Switch */
   --switchWidth: 2.8rem;
   --switchHeight: 1rem;
   --switchBorderRadius: 1rem;
@@ -33,13 +42,43 @@
   --switchBorderHoverColor: var(--colorAlertHover);
 }
 
+/* Label Position */
+.top {
+  --labelOrder: 0;
+  --boxDirection: column;
+}
+
+.right {
+  --labelOrder: 1;
+  --boxDirection: row;
+}
+
+.bottom {
+  --labelOrder: 1;
+  --boxDirection: column;
+}
+
+.left {
+  --labelOrder: 0;
+  --boxDirection: row;
+}
+
+.box {
+  display: flex;
+  align-items: center;
+  flex-direction: var(--boxDirection);
+  gap: var(--boxGap);
+}
+
 .switch {
+  position: relative;
   width: var(--switchWidth);
   height: var(--switchHeight);
   appearance: none;
   border: none;
   border-radius: var(--switchBorderRadius);
   box-shadow: 0 0 0 var(--switchBorderWidth) var(--colorGrayPrimary) inset;
+  cursor: pointer;
 }
 
 /* Checkmark */
@@ -64,8 +103,7 @@
   transform: translate(90%, -50%);
 }
 
-.disabled .label,
-.disabled .switch {
+.switch:disabled {
   cursor: not-allowed;
   opacity: 0.4;
 }

@@ -1,39 +1,47 @@
-import { BaseInput } from '../BaseInput'
+import { Label } from '../Label'
 import { SwitchProps } from './types'
 import cx from 'classnames'
 import '../Color'
 import styles from './Switch.module.css'
 
 export function Switch({
+  color = 'primary',
   boxClassName,
   inputClassName,
   labelClassName,
-  isRequired,
-  color = 'primary',
   disabled,
+  label,
+  labelPosition = 'left',
+  labelProps,
+  id,
+  isRequired,
   ...rest
 }: SwitchProps) {
-  const finalBoxClassNames = cx(
-    styles.container,
-    {
-      [styles[color]]: true,
-      [styles.disabled]: disabled,
-    },
-    boxClassName
-  )
-  const finalSwitchClassNames = cx(styles.switch, inputClassName)
-  const finalLabelClassNames = cx(styles.label, labelClassName)
+  const colorClass = { [styles[color]]: true }
+  const labelPositionClass = { [styles[labelPosition]]: true }
+  const finalBoxClassNames = cx(styles.box, labelPositionClass, boxClassName)
+  const finalSwitchClassNames = cx(styles.switch, colorClass, inputClassName)
+  const finalLabelClassNames = cx(styles.label, colorClass, labelClassName)
 
   return (
-    <BaseInput
-      boxClassName={finalBoxClassNames}
-      color={color}
-      disabled={disabled}
-      isRequired={!disabled && isRequired}
-      inputClassName={finalSwitchClassNames}
-      labelClassName={finalLabelClassNames}
-      type="checkbox"
-      {...rest}
-    />
+    <div className={finalBoxClassNames}>
+      {label && (
+        <Label
+          className={finalLabelClassNames}
+          htmlFor={id}
+          isRequired={!disabled && isRequired}
+          {...labelProps}
+        >
+          {label}
+        </Label>
+      )}
+      <input
+        type="checkbox"
+        className={finalSwitchClassNames}
+        disabled={disabled}
+        id={id}
+        {...rest}
+      />
+    </div>
   )
 }

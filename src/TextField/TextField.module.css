@@ -1,19 +1,61 @@
 :root {
+  /* Box */
+  --boxGap: 0.5rem;
+
+  /* Label */
+  --labelColor: var(--colorTextPrimary);
+
+  /* Textfield */
   --textFieldPadding: 1rem 0.875rem;
   --textFieldWidth: 20rem;
   --textFieldFontSize: 1rem;
+  --textFieldLineHeight: 1;
   --textFieldBorderWidth: 0.125rem;
   --textFieldBorderRadius: 0.4rem;
-  --textFieldFocusColor: var(--colorInfo);
-  --textFieldErrorColor: var(--colorAlert);
-  --textFieldLineHeight: 1;
+  --textFieldBorderColor: var(--colorTextPrimary);
+  --textFieldBorderFocusColor: var(--colorTextPrimary);
 }
 
-.inputBox {
+.box {
   display: flex;
   flex-direction: column;
   align-items: initial;
+  gap: var(--boxGap);
   width: 20rem;
+}
+
+/* Color */
+.primary {
+  --labelColor: var(--colorTextPrimary);
+  --textFieldBorderColor: var(--colorTextPrimary);
+  --textFieldBorderFocusColor: var(--colorTextTertiary);
+}
+
+.info {
+  --labelColor: var(--colorInfo);
+  --textFieldBorderColor: var(--colorInfo);
+  --textFieldBorderFocusColor: var(--colorInfoHover);
+}
+
+.success {
+  --labelColor: var(--colorSuccess);
+  --textFieldBorderColor: var(--colorSuccess);
+  --textFieldBorderFocusColor: var(--colorSuccessHover);
+}
+
+.warning {
+  --labelColor: var(--colorWarning);
+  --textFieldBorderColor: var(--colorWarning);
+  --textFieldBorderFocusColor: var(--colorWarningHover);
+}
+
+.error {
+  --labelColor: var(--colorAlert);
+  --textFieldBorderColor: var(--colorAlert);
+  --textFieldBorderFocusColor: var(--colorAlertHover);
+}
+.label {
+  color: var(--labelColor);
 }
 
 .textField {
@@ -24,7 +66,7 @@
   line-height: var(--textFieldLineHeight);
   border-width: var(--textFieldBorderWidth);
   border-radius: var(--textFieldBorderRadius);
-  border-color: var(--colorTextPrimary);
+  border-color: var(--textFieldBorderColor);
   border-style: solid;
   color: var(--colorTextTertiary);
   outline: none !important;
@@ -33,23 +75,11 @@
   transition: 100ms ease border-color;
 }
 
-.textFieldFocused {
+.textField:focus {
   border-color: var(--textFieldFocusColor);
 }
 
-.textFieldError {
-  border-color: var(--textFieldErrorColor);
-}
-
-.labelFocused {
-  color: var(--textFieldFocusColor);
-}
-
-.labelError {
-  color: var(--textFieldErrorColor);
-}
-
-.disabled {
+.textField:disabled {
   cursor: not-allowed;
   opacity: 0.4;
 }

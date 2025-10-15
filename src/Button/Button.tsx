@@ -3,40 +3,29 @@ import cx from 'classnames'
 import '../Color'
 import styles from './Button.module.css'
 
-export function Button({
-  children,
+export const Button: React.FC<ButtonProps> = ({
   className,
+  children,
   color = 'primary',
-  disabled,
   fullWidth,
-  loading,
-  onClick,
   size = 'medium',
-  type = 'button',
-  variant = 'text',
-  ...props
-}: ButtonProps) {
+  variant = 'outlined',
+  ...rest
+}) => {
   const finalClassNames = cx(
     'ui-button',
     {
       [styles.button]: true,
-      [styles[color]]: true,
-      [styles.disabled]: disabled || loading,
+      [styles[color]]: color,
       [styles.fullWidth]: fullWidth,
-      [styles[size]]: true,
-      [styles[variant]]: true,
+      [styles[size]]: size,
+      [styles[variant]]: variant,
     },
     className
   )
 
   return (
-    <button
-      className={finalClassNames}
-      disabled={disabled || loading}
-      onClick={onClick}
-      type={type}
-      {...props}
-    >
+    <button className={finalClassNames} {...rest}>
       {children}
     </button>
   )

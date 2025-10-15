@@ -1,15 +1,14 @@
 import type { Meta, StoryObj } from '@storybook/react-webpack5'
-import { fn } from 'storybook/test'
 import { Select } from '../Select'
 import { FormSelectOption } from '../types'
 
 const options: FormSelectOption[] = [
-  { value: 'option1', description: 'Option 1' },
-  { value: 'option2', description: 'Option 2' },
-  { value: 'option3', description: 'Option 3', disabled: true },
+  { value: 'typescript', children: 'TypeScript' },
+  { value: 'javascript', children: 'JavaScript' },
+  { value: 'python', children: 'Python' },
+  { value: 'go', children: 'Go' },
+  { value: 'rust', children: 'Rust', disabled: true },
 ]
-
-const placeholder: FormSelectOption = { value: 'default value', description: 'Default option' }
 
 const meta = {
   component: Select,
@@ -25,14 +24,11 @@ type Story = StoryObj<typeof meta>
 
 export const Preview: Story = {
   args: {
-    id: 'app-id',
+    id: 'select-id',
     disabled: false,
-    isRequired: false,
-    label: 'Label',
+    isRequired: true,
+    label: 'Label will be displayed here',
     multiple: true,
-    value: 'default value',
-    onChange: fn(),
     options,
-    placeholder,
   },
 }

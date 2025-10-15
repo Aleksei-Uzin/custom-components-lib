@@ -1,66 +1,45 @@
-import { useState, FocusEvent } from 'react'
+import { Label } from '../Label'
 import cx from 'classnames'
-import { BaseInput } from '../BaseInput'
 import { TextFieldProps } from './types'
 import '../Color'
 import styles from './TextField.module.css'
 
-export function TextField({
-  error,
-  id,
+export const TextField: React.FC<TextFieldProps> = ({
+  color = 'primary',
   boxClassName,
-  labelClassName,
   inputClassName,
+  labelClassName,
   disabled,
+  label,
+  labelProps,
+  id,
   isRequired,
-  onBlur,
-  onFocus,
   ...rest
-}: TextFieldProps) {
-  const [isFocused, setFocused] = useState(false)
-
-  const handleFocus = (e: FocusEvent<HTMLInputElement>) => {
-    setFocused(true)
-    if (onFocus) {
-      onFocus(e)
-    }
-  }
-
-  const handleBlur = (e: FocusEvent<HTMLInputElement>) => {
-    setFocused(false)
-    if (onBlur) {
-      onBlur(e)
-    }
-  }
-
-  const inputClassNames = cx(
-    'ui-text-field',
-    styles.textField,
-    {
-      [styles.disabled]: disabled,
-      [styles.textFieldFocused]: !error && isFocused,
-      [styles.textFieldError]: error,
-    },
-    inputClassName
-  )
-
-  const labelClassNames = cx('ui-text-field-label', {
-    [styles.disabled]: disabled,
-    [styles.labelFocused]: !error && isFocused,
-    [styles.labelError]: error,
-    labelClassName,
-  })
+}) => {
+  const colorClass = { [styles[color]]: true }
+  const finalBoxClassNames = cx(styles.box, boxClassName)
+  const finalTextFieldClassNames = cx(styles.textField, colorClass, inputClassName)
+  const finalLabelClassNames = cx(styles.label, colorClass, labelClassName)
 
   return (
-    <BaseInput
-      id={id}
-      isRequired={!disabled && isRequired}
-      boxClassName={cx(styles.inputBox, boxClassName)}
-      inputClassName={inputClassNames}
-      labelClassName={labelClassNames}
-      onBlur={handleBlur}
-      onFocus={handleFocus}
-      {...rest}
-    />
+    <div className={finalBoxClassNames}>
+      {label && (
+        <Label
+          className={finalLabelClassNames}
+          htmlFor={id}
+          isRequired={!disabled && isRequired}
+          {...labelProps}
+        >
+          {label}
+        </Label>
+      )}
+      <input
+        type="text"
+        className={finalTextFieldClassNames}
+        disabled={disabled}
+        id={id}
+        {...rest}
+      />
+    </div>
   )
 }

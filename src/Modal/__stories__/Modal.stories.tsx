@@ -1,13 +1,15 @@
-import { useState } from 'react'
+import { useRef, useState } from 'react'
 import type { Meta } from '@storybook/react-webpack5'
 import { Button } from '../../Button'
 import { Modal } from '../Modal'
 
 export const ModalStory = () => {
   const [isOpen, setOpen] = useState(false)
+  const divRef = useRef<HTMLDivElement>(null!)
 
   return (
     <div
+      ref={divRef}
       style={{
         width: '600px',
         height: '600px',
@@ -18,8 +20,7 @@ export const ModalStory = () => {
           Open Modal
         </Button>
       </div>
-      <Modal isOpen={isOpen}>
-        <Modal.Header onClose={() => setOpen(false)}>Log In</Modal.Header>
+      <Modal container={divRef.current} open={isOpen} onClose={() => setOpen(false)} title="Log In">
         <form>
           <div
             style={{
@@ -67,7 +68,7 @@ const meta = {
   parameters: {
     layout: 'centered',
   },
-  args: { isOpen: false },
+  args: { open: false },
 } satisfies Meta<typeof Modal>
 
 export default meta

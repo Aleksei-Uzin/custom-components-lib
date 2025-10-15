@@ -1,10 +1,22 @@
-import { type BaseInputProps } from '../BaseInput'
+import { type LabelProps } from '../Label'
 
-export interface TextFieldProps extends Omit<BaseInputProps, 'labelPosition'> {
-  /** If `true`, the input will be styled to indicate an error */
-  error?: boolean
-  /** Maximum number of characters allowed in the element */
-  maxLength?: number
-  /** Optional text field placeholder */
-  placeholder?: string
+export interface TextFieldProps extends React.InputHTMLAttributes<HTMLInputElement> {
+  /** Checkbox primary color */
+  color?: 'primary' | 'info' | 'success' | 'warning' | 'error'
+  /** Optional CSS class name for surrounding div */
+  boxClassName?: string
+  /** Optional CSS class name for label */
+  labelClassName?: string
+  /** Optional CSS class name for input */
+  inputClassName?: string
+  /** Whether the input is disabled */
+  disabled?: boolean
+  /** Label for checkbox */
+  label?: React.ReactNode
+  /** HTML attributes for label */
+  labelProps?: Omit<LabelProps, 'id' | 'isRequired'>
+  /** HTML attribute for binding input with label */
+  id?: string
+  /** Adds red asterisk after label */
+  isRequired?: boolean
 }

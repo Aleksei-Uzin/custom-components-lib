@@ -1,62 +1,48 @@
+import { Label } from '../Label'
 import cx from 'classnames'
 import { SelectProps } from './types'
 
 import '../Color'
 import styles from './Select.module.css'
 
-export function Select({
-  id,
-  className,
-  disabled = false,
-  isRequired,
+export const Select: React.FC<SelectProps> = ({
+  boxClassName,
+  labelClassName,
+  selectClassName,
+  disabled,
   label,
   labelProps,
+  id,
+  isRequired,
   options,
   placeholder,
-  value,
-  onChange,
   ...rest
-}: SelectProps) {
-  const optionsClassNames = cx(
-    styles.option,
-    {
-      [styles.disabled]: disabled,
-    },
-    className
-  )
+}) => {
+  const finalBoxClassNames = cx(styles.box, boxClassName)
+  const finalSelectClassNames = cx(styles.select, selectClassName)
+  const finalLabelClassNames = cx(styles.label, labelClassName)
 
   return (
-    <div className={styles.selectBox}>
+    <div className={finalBoxClassNames}>
       {label && (
-        <label
-          {...labelProps}
+        <Label
+          className={finalLabelClassNames}
           htmlFor={id}
-          className={cx(styles.label, { [styles.required]: !disabled && isRequired })}
+          isRequired={!disabled && isRequired}
+          {...labelProps}
         >
           {label}
-        </label>
+        </Label>
       )}
-      <select
-        id={id}
-        className={cx('ui-select', styles.select)}
-        disabled={disabled}
-        onChange={onChange}
-        value={value}
-        {...rest}
-      >
+      <select id={id} className={finalSelectClassNames} disabled={disabled} {...rest}>
         {placeholder && (
-          <option className={cx(styles.option, styles.placeholder)} value={placeholder.value || ''}>
-            {placeholder.description}
+          <option {...placeholder} className={cx(styles.option, placeholder.className)}>
+            {placeholder.children}
           </option>
         )}
-        {options.map(option => (
-          <option
-            key={option.value}
-            className={optionsClassNames}
-            disabled={option.disabled}
-            value={option.value}
-          >
-            {option.description}
+        {options.map(({ children, className, value, ...rest }) => (
+          <option key={value} className={cx(styles.option, className)} value={value} {...rest}>
+            {children}
           </option>
         ))}
       </select>

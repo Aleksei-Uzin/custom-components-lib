@@ -1,5 +1,4 @@
 import type { Meta, StoryObj } from '@storybook/react-webpack5'
-import { fn } from 'storybook/test'
 import { Button } from '../Button'
 
 const meta = {
@@ -21,14 +20,12 @@ export const Preview: Story = {
     </div>
   ),
   args: {
+    className: 'ui-button',
     children: 'Button',
     color: 'primary',
-    disabled: false,
     fullWidth: false,
-    loading: false,
     size: 'medium',
-    type: 'button',
-    variant: 'text',
-    onClick: fn(),
+    variant: 'outlined',
+    disabled: true,
   },
 }

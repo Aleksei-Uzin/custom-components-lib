@@ -15,12 +15,10 @@ type Story = StoryObj<typeof meta>
 
 export const Preview: Story = {
   args: {
-    id: 'app-id',
+    color: 'primary',
     disabled: false,
-    error: false,
-    isRequired: false,
-    label: 'Label',
-    placeholder: 'Type your text here',
-    value: '',
+    id: 'textfield-id',
+    label: 'Label will be displayed here',
+    placeholder: 'What’s on your mind?',
   },
 }

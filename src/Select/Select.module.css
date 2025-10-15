@@ -1,4 +1,7 @@
 :root {
+  /* Box */
+  --boxGap: 0.5rem;
+
   /* Label */
   --selectLabelMarginBottom: 0.125rem;
   --selectLabelFontSize: 0.875rem;
@@ -6,24 +9,22 @@
   --selectLabelOpacity: 0.7;
 
   /* Select */
-  --selectPadding: 0.5rem;
+  --selectPadding: 1rem 0.875rem;
   --selectWidth: 20rem;
   --selectFontSize: 1rem;
   --selectBorderWidth: 0.125rem;
   --selectFocusBorderColor: var(--colorInfo);
   --selectErrorBorderColor: var(--colorAlert);
 
-  /* Option */
-  --optionPadding: 1rem 0.75rem;
-
   /* Common */
   --selectBorderRadius: 0.4rem;
   --selectLineHeight: 1;
 }
 
-.selectBox {
+.box {
   display: flex;
   flex-direction: column;
+  gap: var(--boxGap);
   width: var(--selectWidth);
 }
 
@@ -36,13 +37,6 @@
   opacity: var(--selectLabelOpacity);
 }
 
-.label.required::before {
-  display: inline;
-  content: '*';
-  margin-left: 0.0625rem;
-  margin-right: 0.1875rem;
-}
-
 .select {
   padding: var(--selectPadding);
   background: transparent;
@@ -53,7 +47,8 @@
 }
 
 .option {
-  padding: var(--optionPadding);
+  appearance: none;
+  padding: var(--selectPadding);
   line-height: var(--selectLineHeight);
   border-radius: var(--selectBorderRadius);
   color: var(--colorTextPrimary);
@@ -66,8 +61,5 @@
 
 .option:disabled {
   opacity: 0.4;
-}
-
-.option:disabled {
   cursor: not-allowed;
 }
